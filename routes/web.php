@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,10 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/permisos', function () {
+
+Route::get('/admin/permisos', [UserController::class, 'index'])->name('admin.permisos');
+
+/* Route::get('/admin/permisos', function () {
     return view('/admin/permisos');
 });
-
+ */
 Route::get('/admin/maestros', function () {
     return view('/admin/maestros');
 });
