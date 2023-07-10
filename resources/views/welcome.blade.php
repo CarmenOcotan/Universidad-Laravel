@@ -19,29 +19,16 @@
             overflow: hidden;
             white-space: nowrap;
             border-right: 0.15em transparent rgb(15, 14, 49); /* Cambia el color del cursor */
-            animation: typing 7s steps(22), blink-caret 0.75s step-end infinite;
+            animation: typing 5s steps(22), blink-caret 0.75s step-end infinite;
         }
-
-        /* Animación de escritura */
         @keyframes typing {
             from {
                 width: 0;
             }
             to {
-                width: 75%;
+                width: 400px;
             }
         }
-
-        /* Parpadeo del cursor */
-        /* @keyframes blink-caret {
-            from,
-            to {
-                border-color: transparent;
-            }
-            50% {
-                border-color: rgb(240, 239, 236); Cambia el color del cursor
-            }
-        } */
     </style>
 
     <script>
@@ -72,7 +59,7 @@
         </div>
     @endif
     <div class="w-1/2 max-w-7xl mx-auto p-6 lg:p-8 flex justify-center">
-        <h1 id="typewriter" class="text-6xl">WELCOME...!</h1>
+        <h1 id="typewriter" class="text-6xl">Bienvenido..!</h1>
     </div>
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">

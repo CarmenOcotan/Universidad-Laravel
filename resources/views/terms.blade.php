@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <div class="pt-4 bg-gray-100">
-        <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
+    <div class="pt-4 ">
+        <div class="min-h-screen bg-indigo-200 selection:bg-indigo-500 flex flex-col items-center pt-6 sm:pt-0">
             <div>
                 <x-authentication-card-logo />
             </div>

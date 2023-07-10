@@ -20,12 +20,20 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin/permisos', [UserController::class, 'index'])->name('admin.permisos');
+Route::resource('usuarios', UserController::class)->names('admin');
 
+/* Route::put('/permisos/update{id}', [StudentController::class,'update'])
+->middleware(['auth','verified'])->name('admin.update');  */
+
+
+/* Route::get('/admin/permisos', [UserController::class, 'index'])->name('admin.permisos');
+ */
 /* Route::get('/admin/permisos', function () {
     return view('/admin/permisos');
 });
  */
+
+
 Route::get('/admin/maestros', function () {
     return view('/admin/maestros');
 });

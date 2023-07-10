@@ -298,7 +298,7 @@ return [
         ], */
         [
             'text'         => 'Home',
-            'url'          => '#',
+            'url'          => '/dashboard',
             'topnav' => true,
         ],
 
@@ -325,7 +325,7 @@ return [
         ],
         [
             'text' => 'Permisos',
-            'url'  => '/admin/permisos',
+            'url'  => 'usuarios',
             'icon' => 'fas fa-fw fa-user',
             
         ],

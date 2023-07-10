@@ -22,62 +22,44 @@
 @stop
 
 @section('content')
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">Informacion de Maestros</h5>
-        <p class="card-text">
-<table id="example" class="table table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011-04-25</td>
-            <td>$320,800</td>
-        </tr>
-        <tr>
-            <td>Jena Gaines</td>
-            <td>Office Manager</td>
-            <td>London</td>
-            <td>30</td>
-            <td>2008-12-19</td>
-            <td>$90,560</td>
-        </tr>
-        <tr>
-            <td>Tatyana Fitzpatrick</td>
-            <td>Regional Director</td>
-            <td>London</td>
-            <td>19</td>
-            <td>2010-03-17</td>
-            <td>$385,750</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-        </tr>
-    </tfoot>
-</table>
-</p>
-
-</div>
-</div>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-header"><h5 class="card-title">Informacion de Maestros</h5></div>
+            <div class="card-text">
+                <h5 class="card-title">Informacion de Maestros</h5>
+            </div>
+            <table id="tablaMaster" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre de alumno</th>
+                        <th>Calificacion</th>
+                        <th>Mensajes</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>q</td>
+                        <td>alumno</td>
+                        <td>10</td>
+                        <td>
+                            <button class="btn">
+                                <i class="bi bi-chat-square-dots h4"></i>
+                                <span style="vertical-align:top;"
+                                    class="badge badge-warning"></span>
+                            </button>
+                            <span class="badge badge-info">No hay mensajes</span>
+                        </td>
+                        <td class="text-center">
+                            <i class="bi bi-clipboard2-plus h4"></i></a>
+                            <a href="#" class="mx-2"><i class="bi bi-send-plus h4"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 @stop
 
 @section('css')
@@ -90,5 +72,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
-    <script>new DataTable('#example');</script>
+    <script>    $("#tablaMaster").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": true,
+        "buttons": ["copy", "excel", "pdf", "colvis"]
+    }).buttons().container().appendTo('#tablaMaster_wrapper .col-md-6:eq(0)');
+    const msgBox = document.getElementById("msgInfo");</script>
 @stop
+
