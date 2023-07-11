@@ -22,10 +22,10 @@
 
 @section('content')
     <div class="card">
+        <div class="card-header">
+            <h5 class="card-title ">Informacion de Permisos</h5>
+        </div>
         <div class="card-body">
-            <div class="card-header">
-                <h5 class="card-title ">Informacion de Permisos</h5>
-            </div>
             <div class="card-text">
                 <table id="permisos" class="table table-striped table-bordered" style="width:100%">
                     <thead>

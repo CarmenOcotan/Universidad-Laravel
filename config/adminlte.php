@@ -337,13 +337,13 @@ return [
 
         [
             'text' => 'Alumnos',
-            'url'  => '/admin/alumnos',
+            'url'  => 'alumnos',
             'icon' => 'fas fa-fw fa-graduation-cap',
         ],
 
         [
             'text' => 'Clases',
-            'url'  => '/admin/clases',
+            'url'  => 'clases',
             'icon' => 'fas fa-fw fa-chalkboard',
         ],
 /*         [

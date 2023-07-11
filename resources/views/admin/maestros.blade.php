@@ -18,59 +18,64 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Agregar Maestro</button>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Agregar Maestro</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('maestros.store') }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-                            <input type="text" class="form-control" name="email" value="Ingresa email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nombre(s)</label>
-                            <input type="text" class="form-control" name="nombre" value="Ingresa nombres(s) ">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Apellido(s)</label>
-                            <input type="text" class="form-control" name="apellido" value=" Apellido(s)">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Direccion</label>
-                            <input type="text" class="form-control" name="direccion" value="Ingresa la direccion ">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="fecha_cumple">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password" value="">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-primary">Crear</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 @stop
 
 @section('content')
     <div class="card mt-3">
+        <div class="card-header">
+            <div class="row justify-content-between">
+                <h5 class="card-title">Informacion de Maestros</h5>
+            {{-- Modals --}}
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Maestro</button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Agregar Maestro</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{ route('maestros.store') }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                                        <input type="text" class="form-control" name="email" value="Ingresa email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Nombre(s)</label>
+                                        <input type="text" class="form-control" name="nombre" value="Ingresa nombres(s) ">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Apellido(s)</label>
+                                        <input type="text" class="form-control" name="apellido" value=" Apellido(s)">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Direccion</label>
+                                        <input type="text" class="form-control" name="direccion" value="Ingresa la direccion ">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control" name="fecha_cumple">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" value="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary">Crear</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card-body">
-            <h5 class="card-title">Informacion de Maestros</h5>
             <div class="card-text">
                 <table id="maestros" class="table table-striped" style="width:100%">
                     <thead>
@@ -101,7 +106,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn color-red" data-toggle="modal"
+                                        <button class="btn" data-toggle="modal"
                                             data-target="#myModal{{ $maestro->id }}">
                                             <i class="far fa-edit"></i>
                                         </button><a href="{{ route('maestros.destroy', $maestro->id) }}"

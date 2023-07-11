@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classs;
+use App\Models\Maestro;
 use Illuminate\Http\Request;
 
 class ClaseController extends Controller
@@ -11,7 +13,10 @@ class ClaseController extends Controller
      */
     public function index()
     {
-        //
+        
+        $maestros =Maestro::all();
+        $classses=Classs::all();
+        return view('admin/clases',compact('maestros','classses'));
     }
 
     /**
@@ -27,7 +32,13 @@ class ClaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newClasss = new Classs();
+        $newClasss->name_class = $request->input('nombre').' '.$request->input('apellido');
+        $newClasss->maestro_id = $request->input('asignacion');
+        
+        // Agrega otros campos y sus valores
+        $newClasss->save();
+        return redirect()->route('clases')->with('success', 'Registro actualizado correctamente'); 
     }
 
     /**
@@ -51,7 +62,13 @@ class ClaseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $classs= Classs::findOrFail($id);
+        $classs->name_class = $request->input('nombre').' '.$request->input('apellido');
+        $classs->maestro_id = $request->input('asignacion');
+        $classs->save();
+        return redirect()->route('clases')->with('success', 'Registro actualizado correctamente'); 
+        
     }
 
     /**
@@ -59,6 +76,8 @@ class ClaseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $registro = Classs::findOrFail($id);
+        $registro->delete();
+        return redirect()->route('clases')->with('success', 'Registro borrado correctamente');
     }
 }
