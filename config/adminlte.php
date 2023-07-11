@@ -331,7 +331,7 @@ return [
         ],
         [
             'text' => 'Maestros',
-            'url'  => '/admin/maestros',
+            'url'  => 'maestros',
             'icon' => 'fas fa-fw fa-chalkboard-teacher',
         ],
 

@@ -50,8 +50,8 @@ class UserController extends Controller
 
     public function edit(string $id)
     {
-        $usuario = User::find($id);
-        $estado = ($usuario->active) ? 'Activo' : 'Inactivo';
+        /*  $usuario = User::find($id);
+        $estado = ($usuario->active) ? 'Activo' : 'Inactivo'; */
         $roles = Role::all();
         return $roles;
 

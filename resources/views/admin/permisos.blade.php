@@ -59,6 +59,8 @@
                                         data-target="#editarModal{{ $usuario->id }}"><i class="far fa-edit"></i></a>
                                 </td>
                             </tr>
+
+                            {{-- Modal --}}
                             <div class="modal fade" id="editarModal{{ $usuario->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="editarModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
